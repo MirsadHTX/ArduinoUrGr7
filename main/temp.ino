@@ -157,3 +157,49 @@ void LuckyKid() //random student
   delay(100);
   lcd.clear();
 }
+
+void Chrismas()
+{
+  lcd.setCursor(0, 0);
+  lcd.print(24-clock.dayOfMonth);
+  lcd.print(" dage til jul");
+  lcd.setCursor(0, 1);
+  lcd.print(12-clock.month);
+  lcd.print(" maaned t. jul");
+}
+
+void StopUr()
+{
+  
+  if (clicks == true && trykFoer ==false)
+  {
+    if (urStop==false)
+    {
+       urStop=true;
+   }
+    else 
+    {
+      urStop=false;
+
+      
+     tidFoer = tidNu;
+     lcd.clear();
+    
+    } 
+ 
+  }
+
+
+  
+  if (urStop==false)
+  {
+    tidNu = millis();
+
+    counter = tidNu-tidFoer;
+  }
+
+  trykFoer=clicks;
+  
+  lcd.setCursor(0,0);
+  lcd.print(counter/1000);
+}

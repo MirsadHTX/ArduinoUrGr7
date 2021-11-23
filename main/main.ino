@@ -29,8 +29,14 @@ int clickCount = 0;
 bool stopClicks2 = true;
 int clickCount2 = 0;
 
-
+//stopwatch
 int stopWatchCount;
+bool trykFoer;
+bool urStop;
+float tidNu;
+float tidFoer;
+float counter;
+
 
 
 bool nameFlag;
@@ -92,9 +98,10 @@ void loop()
 
   if (currentState == 3) //stopwacth
   {
-    
     lcd.clear();
     lcd.setRGB(255, 255, 150);
+    StopUr();
+    /*
     lcd.setCursor(0, 0);
     stopWatchCount += 1;
     lcd.print(stopWatchCount/40);
@@ -106,6 +113,8 @@ void loop()
       stopWatchCount = 0;
       playMelody();
     }
+    */
+
     
   }
   
@@ -116,5 +125,11 @@ void loop()
     LuckyKid();
   }
 
+  if(currentState == 5)
+  {
+    lcd.clear();
+    lcd.setRGB(255,255,0);
+    Chrismas();
+  }
 
 }

@@ -29,10 +29,10 @@ int stateSwitch()
 
         if (count == -1)
     {
-      count = 4;
+      count = 5;
     }
     //max state
-    if (count == 5)
+    if (count == 6)
     {
       count = 0;
     }
