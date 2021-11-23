@@ -33,7 +33,6 @@ int clickCount2 = 0;
 int stopWatchCount;
 
 
-
 DS1307 clock;
 
 void setup() 
@@ -41,10 +40,10 @@ void setup()
   lcd.begin(16, 2);
   accelmeter.init();
   pinMode(7, INPUT);  //for button
-
+  
   Serial.begin(9600);
   clock.begin();
-
+  
 }
 
 void loop() 
@@ -89,9 +88,9 @@ void loop()
 
   if (currentState == 3) //stopwacth
   {
+    
     lcd.clear();
     lcd.setRGB(255, 255, 150);
-    //stopWatch();
     lcd.setCursor(0, 0);
     stopWatchCount += 1;
     lcd.print(stopWatchCount/40);
@@ -99,7 +98,9 @@ void loop()
     if(clicks == true)
     {
       stopWatchCount = 0;
+      playMelody();
     }
+    
   }
   
   if (currentState == 4)  //random student
