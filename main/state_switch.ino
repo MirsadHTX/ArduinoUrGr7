@@ -1,5 +1,4 @@
 #include "MMA7660.h"
-//#include "main.ino"
 
 
 int stateSwitch()

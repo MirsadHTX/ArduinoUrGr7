@@ -146,5 +146,12 @@ void LuckyKid() //random student
 void stopWatch()
 {
   lcd.setCursor(0, 0);
-  lcd.print(millis() / 1000);
+  int stopWatchCount;
+  lcd.print(stopWatchCount/100);
+  stopWatchCount += 100;
+  delay(10);
+  if(clicks == true)
+  {
+    stopWatchCount = 0;
+  }
 }

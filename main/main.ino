@@ -4,7 +4,6 @@
 #include "MMA7660.h"
 #include "rgb_lcd.h"
 #include "DS1307.h"
-//#include "state_switch.ino"
 
 //for accel
 float x, y, z;
@@ -33,6 +32,8 @@ int clickCount2 = 0;
 
 
 
+
+
 DS1307 clock;
 
 void setup() 
@@ -49,7 +50,7 @@ void setup()
 void loop() 
 {
   currentState = stateSwitch();
-  
+  clicks = digitalRead(7);
 
 
   //state switching
