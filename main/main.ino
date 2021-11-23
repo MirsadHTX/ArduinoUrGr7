@@ -30,7 +30,7 @@ bool stopClicks2 = true;
 int clickCount2 = 0;
 
 
-
+int stopWatchCount;
 
 
 
@@ -91,7 +91,15 @@ void loop()
   {
     lcd.clear();
     lcd.setRGB(255, 255, 150);
-    stopWatch();
+    //stopWatch();
+    lcd.setCursor(0, 0);
+    stopWatchCount += 1;
+    lcd.print(stopWatchCount/40);
+    delay(10);
+    if(clicks == true)
+    {
+      stopWatchCount = 0;
+    }
   }
   
   if (currentState == 4)  //random student
