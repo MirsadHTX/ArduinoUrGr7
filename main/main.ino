@@ -33,6 +33,10 @@ int clickCount2 = 0;
 int stopWatchCount;
 
 
+bool nameFlag;
+int randomName;
+
+
 DS1307 clock;
 
 void setup() 
@@ -94,6 +98,8 @@ void loop()
     lcd.setCursor(0, 0);
     stopWatchCount += 1;
     lcd.print(stopWatchCount/40);
+    lcd.setCursor(0, 1);
+    lcd.print("seconds");
     delay(10);
     if(clicks == true)
     {
