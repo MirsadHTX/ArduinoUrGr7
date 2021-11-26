@@ -7,16 +7,16 @@ int stateSwitch()
 
   int clicks = digitalRead(7);
     
-    if (x >= 1 && flag == false)
+    if (x >= 1 && flag == false)  //increase count
     {
-      count += 1;
+      count = count + 1;
       flag = true;
       playMelody();
     }
 
-    if (x <= -0.8 && flag == false)
+    if (x <= -0.8 && flag == false) //decrease count
     {
-      count -=1;
+      count = count - 1;
       flag = true;
       playMelody();
     }
@@ -26,22 +26,16 @@ int stateSwitch()
     {
       flag = false;
     }
-
         if (count == -1)
     {
       count = 5;
     }
+    
     //max state
     if (count == 6)
     {
       count = 0;
     }
-
-    //away from random student state
-    /*if(clicks == 1 && count == 4)
-    {
-      count -= 1;
-    }*/
   
   delay(10);
 

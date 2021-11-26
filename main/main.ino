@@ -29,7 +29,7 @@ int clickCount = 0;
 bool stopClicks2 = true;
 int clickCount2 = 0;
 
-//stopwatch
+//for stopwatch
 int stopWatchCount;
 bool trykFoer;
 bool urStop;
@@ -37,12 +37,11 @@ float tidNu;
 float tidFoer;
 float counter;
 
-
-
+//for random student
 bool nameFlag;
 int randomName;
 
-
+//for clock
 DS1307 clock;
 
 void setup() 
@@ -58,7 +57,9 @@ void setup()
 
 void loop() 
 {
+  //get state
   currentState = stateSwitch();
+  //get button
   clicks = digitalRead(7);
 
 
@@ -83,6 +84,7 @@ void loop()
     delay(100);
     lcd.clear();
   }
+  
   if (currentState == 1)  //temperature
   {
     lcd.clear();
@@ -101,21 +103,6 @@ void loop()
     lcd.clear();
     lcd.setRGB(255, 255, 150);
     StopUr();
-    /*
-    lcd.setCursor(0, 0);
-    stopWatchCount += 1;
-    lcd.print(stopWatchCount/40);
-    lcd.setCursor(0, 1);
-    lcd.print("seconds");
-    delay(10);
-    if(clicks == true)
-    {
-      stopWatchCount = 0;
-      playMelody();
-    }
-    */
-
-    
   }
   
   if (currentState == 4)  //random student
@@ -125,7 +112,7 @@ void loop()
     LuckyKid();
   }
 
-  if(currentState == 5)
+  if(currentState == 5) //christmas
   {
     lcd.clear();
     lcd.setRGB(255,255,0);

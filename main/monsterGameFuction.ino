@@ -39,7 +39,7 @@ if (clickCount == 0)
 if (clickCount == 1)
 {
   lcd.print("Click 50 times");
-  lcd.setCursor(0,1);
+  lcd.setCursor(0, 1);
   lcd.print("to defeat Jeppe");
 }
 
@@ -155,7 +155,7 @@ if (clickCount2 > 499 && clickCount == 8)
 if (clickCount == 9)
 {
   lcd.print("Congratulations");
-  lcd.setCursor(0,1);
+  lcd.setCursor(0, 1);
   lcd.print("You survived");
 }
 
@@ -171,8 +171,8 @@ lcd.clear();
 void playMelody()
 {
   pinMode(3, OUTPUT);
-  digitalWrite(3,HIGH);
+  digitalWrite(3, HIGH);
   delay(50);
-  digitalWrite(3,LOW);
+  digitalWrite(3, LOW);
  
 }

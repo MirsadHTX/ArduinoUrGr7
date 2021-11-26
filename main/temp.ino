@@ -18,6 +18,8 @@ void LuckyKid() //random student
   
   
   lcd.setCursor(0, 0);
+  /////////////////
+  //get random number when button is pressed for random name
   if(clicks == true)
   {
     nameFlag = true;
@@ -27,8 +29,9 @@ void LuckyKid() //random student
     //nameFlag = false;
     randomName = random(0,29);
   }
+  ///////Y//////////
 
-  if(clicks == true || nameFlag == true)
+  if(clicks == true || nameFlag == true)  //get random name
   {
     if(randomName == 0)
     {
@@ -158,7 +161,7 @@ void LuckyKid() //random student
   lcd.clear();
 }
 
-void Chrismas()
+void Chrismas() //christmas
 {
   lcd.setCursor(0, 0);
   lcd.print(24-clock.dayOfMonth);
@@ -168,28 +171,23 @@ void Chrismas()
   lcd.print(" maaned t. jul");
 }
 
-void StopUr()
+void StopUr() //stopwatch
 {
   
   if (clicks == true && trykFoer ==false)
   {
-    if (urStop==false)
+    if (urStop == false)
     {
-       urStop=true;
-   }
+       urStop = true;
+    }
     else 
     {
-      urStop=false;
+      urStop = false;
 
-      
      tidFoer = tidNu;
      lcd.clear();
-    
     } 
- 
   }
-
-
   
   if (urStop==false)
   {
@@ -198,7 +196,7 @@ void StopUr()
     counter = tidNu-tidFoer;
   }
 
-  trykFoer=clicks;
+  trykFoer = clicks;
   
   lcd.setCursor(0,0);
   lcd.print(counter/1000);
