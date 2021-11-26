@@ -95,7 +95,7 @@ void loop()
   {
     lcd.clear();
     lcd.setRGB(0, 0, 255);
-    monsterSpil();
+    MonsterSpil();
   }
 
   if (currentState == 3) //stopwacth

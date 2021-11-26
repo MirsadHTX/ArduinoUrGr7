@@ -4,7 +4,7 @@
 
 
 
-void monsterSpil()
+void MonsterSpil()
 {
 
   //type the output in here for the botton
