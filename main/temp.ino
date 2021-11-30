@@ -198,3 +198,103 @@ void StopUr() //stopwatch
   lcd.setCursor(0,0);
   lcd.print(counter/1000);
 }
+
+
+
+
+void Alarm()
+{
+    lcd.setCursor(0,0);
+    if(alarmState == 0) //hour counter
+    {
+      if(clicks == true && alarmFlag == false)
+      {
+        alarmHour = alarmHour + 1;
+        alarmFlag = true;
+      }
+      
+      if(clicks == false)
+      {
+        alarmFlag = false;
+      }
+  
+      lcd.print(alarmHour);
+      lcd.print(" hours");
+    }
+  
+  
+    if(alarmState == 1) // minute counter
+    {
+      if(clicks == true && alarmFlag == false)
+      {
+        alarmMin = alarmMin + 1;
+        alarmFlag = true;
+      }
+      
+      if(clicks == false)
+      {
+        alarmFlag = false;
+      }
+  
+      lcd.print(alarmMin);
+      lcd.print(" minutes");
+    }
+  
+  
+  
+      if (y >= 1 && alarmStateFlag == false)  //increase alarmState
+      {
+        alarmState = alarmState + 1;
+        alarmStateFlag = true;
+      }
+    
+      if (y <= -0.8 && alarmStateFlag == false) //decrease alarmState
+      {
+        alarmState = alarmState - 1;
+        alarmStateFlag = true;
+      }
+    
+    
+
+        // reset alarmStateFlag
+        if (y > -0.5 && y < 0.5)
+        {
+          alarmStateFlag = false;
+        }
+      
+        if (alarmState == -1 && alarmState > 50)
+        {
+          count = 1;
+        }
+  
+      
+      
+      if(alarmState > 1)
+      {
+        clock.getTime();
+        alarmState = 999;
+        lcd.setCursor(0,0);
+        lcd.print("Alarm set");
+        lcd.setCursor(0,1);
+        lcd.print(alarmHour, DEC);
+        lcd.print(":");
+        lcd.print(alarmMin, DEC);
+
+        lcd.print("  ");
+        lcd.print(clock.hour, DEC);
+        lcd.print(":");
+        lcd.print(clock.minute, DEC);
+        
+        if(alarmHour == clock.hour && alarmMin == clock.minute)
+        {
+          playMelody();
+          lcd.print("ALARM");
+        }
+        
+      }
+  
+  
+  
+    delay(100);
+    lcd.clear();
+}

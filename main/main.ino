@@ -44,6 +44,15 @@ int randomName;
 //for clock
 DS1307 clock;
 
+//for alarm
+bool alarmFlag;
+int alarmState = 0;
+int alarmHour;
+int alarmMin;
+bool alarmStateFlag;
+
+
+
 void setup() 
 {
   lcd.begin(16, 2);
@@ -117,6 +126,13 @@ void loop()
     lcd.clear();
     lcd.setRGB(255,255,0);
     Chrismas();
+  }
+
+  if(currentState == 6) //alarm
+  {
+    lcd.clear();
+    lcd.setRGB(0,255,255);
+    Alarm();
   }
 
 }

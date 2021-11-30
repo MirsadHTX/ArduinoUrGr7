@@ -26,13 +26,14 @@ int stateSwitch()
     {
       flag = false;
     }
-        if (count == -1)
+    
+    if (count == -1)
     {
-      count = 5;
+      count = 6;
     }
     
     //max state
-    if (count == 6)
+    if (count == 7)
     {
       count = 0;
     }
