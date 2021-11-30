@@ -14,9 +14,6 @@ void tempu()  //temperature
 
 void LuckyKid() //random student
 {
-
-  
-  
   lcd.setCursor(0, 0);
   /////////////////
   //get random number when button is pressed for random name
