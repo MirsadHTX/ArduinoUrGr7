@@ -70,13 +70,15 @@ void loop()
   currentState = stateSwitch();
   //get button
   clicks = digitalRead(7);
+  clock.getTime();
 
+  Schedule();  //beep on schedule
+  
 
   //state switching
   if (currentState == 0)  //clock
   {
     lcd.setRGB(0, 255, 0);
-    clock.getTime();
     lcd.setCursor(0, 0);
     lcd.print(clock.hour, DEC);
     lcd.print(":");

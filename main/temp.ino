@@ -298,3 +298,80 @@ void Alarm()
     delay(100);
     lcd.clear();
 }
+
+
+void Schedule() //beep at schedule
+{
+  
+  if(clock.hour == 8 && clock.minute == 15 && clock.second == 1)  //8:15
+  {
+    playMelody();
+  }
+
+  if(clock.hour == 9 && clock.minute == 15 && clock.second == 1)  //9:15
+  {
+    playMelody();
+    delay(1000);
+    playMelody();
+  }
+
+  if(clock.hour == 9 && clock.minute == 35 && clock.second == 1)  //9:35
+  {
+    playMelody();
+  }
+
+  if(clock.hour == 10 && clock.minute == 35 && clock.second == 1) //10:35
+  {
+    playMelody();
+    delay(1000);
+    playMelody();
+  }
+
+  if(clock.hour == 10 && clock.minute == 45 && clock.second == 1)  //10:45
+  {
+    playMelody();
+  }
+
+  if(clock.hour == 11 && clock.minute == 45 && clock.second == 1) //11:45
+  {
+    playMelody();
+    delay(1000);
+    playMelody();
+  }
+
+  if(clock.hour == 12 && clock.minute == 15 && clock.second == 1)  //12:15
+  {
+    playMelody();
+  }
+
+  if(clock.hour == 13 && clock.minute == 15 && clock.second == 1) //13:15
+  {
+    playMelody();
+    delay(1000);
+    playMelody();
+  }
+
+  if(clock.hour == 13 && clock.minute == 25 && clock.second == 1)  //13:25
+  {
+    playMelody();
+  }
+
+  if(clock.hour == 14 && clock.minute == 25 && clock.second == 1) //14:25
+  {
+    playMelody();
+    delay(1000);
+    playMelody();
+  }
+
+  if(clock.hour == 14 && clock.minute == 30 && clock.second == 1)  //14:30
+  {
+    playMelody();
+  }
+
+  if(clock.hour == 15 && clock.minute == 30 && clock.second == 1) //15:30
+  {
+    playMelody();
+    delay(1000);
+    playMelody();
+  }
+}
